@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Optic Vision Médical - Cabinet d'Optique Médicale</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ==========================================
+           RESET & PALETTE (Rouge, Blanc, Anthracite)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --medical-red: #dc2626;
+            --dark-red: #b91c1c;
+            --anthracite: #0f172a;
+            --soft-dark: #1e293b;
+            --text-gray: #475569;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --border-gray: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--anthracite);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           HEADER / NAVBAR
+           ========================================== */
+        header {
+            background-color: var(--anthracite);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-bottom: 3px solid var(--medical-red);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--medical-red);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--medical-red);
+        }
+
+        .btn-call {
+            background-color: var(--medical-red);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-call:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-1px);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)),
+                url('https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+            color: var(--white);
+            padding: 90px 0 80px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            background-color: rgba(220, 38, 38, 0.2);
+            border: 1px solid var(--medical-red);
+            color: #fca5a5;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p.tagline {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        /* Promo Highlight Cards */
+        .promo-banner {
+            background-color: var(--white);
+            color: var(--anthracite);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 28px;
+            border-radius: 12px;
+            border-top: 4px solid var(--medical-red);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .promo-item {
+            text-align: center;
+        }
+
+        .promo-item .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--medical-red);
+        }
+
+        .promo-item .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        /* ==========================================
+           SECTION A PROPOS / PRESENTATION
+           ========================================== */
+        .about-showcase {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .showcase-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .showcase-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .showcase-text h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+            color: var(--anthracite);
+            line-height: 1.3;
+        }
+
+        .showcase-text p {
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .showcase-images {
+            flex: 1;
+            min-width: 300px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .showcase-images img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ==========================================
+           SERVICES SECTION
+           ========================================== */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--anthracite);
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background-color: var(--medical-red);
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 22px;
+            text-align: center;
+        }
+
+        .service-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--anthracite);
+        }
+
+        .service-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* ==========================================
+           ADVANTAGES / SAV SECTION
+           ========================================== */
+        .advantages {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .advantages-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .adv-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .adv-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 22px;
+            color: var(--anthracite);
+        }
+
+        .adv-list {
+            list-style: none;
+        }
+
+        .adv-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: var(--anthracite);
+        }
+
+        .adv-list li::before {
+            content: "✓";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--medical-red);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .sav-box {
+            flex: 1;
+            min-width: 280px;
+            background-color: var(--soft-dark);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 5px solid var(--medical-red);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .sav-box h4 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .sav-box p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           SECTION LOCALISATION & CARTE
+           ========================================== */
+        .location-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .location-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .location-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--anthracite);
+        }
+
+        .location-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--medical-red);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            margin-top: 20px;
+        }
+
+        .location-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--anthracite);
+        }
+
+        .location-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .location-map {
+            flex: 1.2;
+            min-width: 320px;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--border-gray);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--anthracite);
+            color: var(--white);
+            padding: 60px 0 25px;
+            border-top: 3px solid var(--medical-red);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 35px;
+            height: 2px;
+            background-color: var(--medical-red);
+        }
+
+        .footer-col p {
+            font-size: 0.92rem;
+            margin-bottom: 10px;
+            color: #94a3b8;
+        }
+
+        .phone-numbers {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: 6px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* ==========================================
+           RESPONSIVE DESIGN
+           ========================================== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p.tagline {
+                font-size: 1rem;
+            }
+
+            .promo-banner {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .showcase-images {
+                grid-template-columns: 1fr;
+            }
+
+            .location-map {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">New Optic <span>Vision</span></div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#localisation">Localisation</a></li>
+            </ul>
+            <a href="tel:679893519" class="btn-call">Appeler maintenant</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <span class="hero-badge">Cabinet d'Optique Médicale</span>
+            <h1>New Optic Vision Médical</h1>
+            <p class="tagline">"Votre Partenaire Santé pour la Vue à Vie"</p>
+
+            <!-- Bannières d'Offres Promotionnelles -->
+            <div class="promo-banner" id="offres">
+                <div class="promo-item">
+                    <div class="number">50%</div>
+                    <div class="label">Jusqu'à 50% de Remise</div>
+                </div>
+                <div class="promo-item">
+                    <div class="number">1 AN</div>
+                    <div class="label">Garantie sur Lunettes</div>
+                </div>
+                <div class="promo-item">
+                    <div class="number">100%</div>
+                    <div class="label">Conseil & SAV Gratuits</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION A PROPOS & GALERIE VISUELLE -->
+    <section class="about-showcase" id="apropos">
+        <div class="container showcase-grid">
+            <div class="showcase-text">
+                <h2>Excellence & Soin de votre Vue</h2>
+                <p>Chez <strong>New Optic Vision Médical</strong>, nous mettons notre expertise au service de votre
+                    santé visuelle. Profitez d'un accompagnement personnalisé, de conseils d'experts et d'un large choix
+                    de montures de qualité.</p>
+                <a href="#localisation" class="btn-call">Nous rendre visite</a>
+            </div>
+            <div class="showcase-images">
+                <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=600"
+                    alt="Examen de la vue">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600"
+                    alt="Lunettes de vue">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services & Produits</h2>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&q=80&w=600"
+                        alt="Lunettes Médicales" class="service-img">
+                    <div class="service-info">
+                        <h3>Lunettes Médicales</h3>
+                        <p>Large choix de montures et verres adaptés à votre vue et à votre style au quotidien.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&q=80&w=600"
+                        alt="Accessoires Optiques" class="service-img">
+                    <div class="service-info">
+                        <h3>Accessoires Optiques</h3>
+                        <p>Produits d'entretien, étuis et accessoires haut de gamme pour vos lunettes.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=600"
+                        alt="Montage et Réparation" class="service-img">
+                    <div class="service-info">
+                        <h3>Montage & Réparation</h3>
+                        <p>Montage précis de vos verres et réparation rapide de toutes vos montures.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600"
+                        alt="Entretien et Conseil" class="service-img">
+                    <div class="service-info">
+                        <h3>Entretien & Conseil</h3>
+                        <p>Accompagnement personnalisé et entretien régulier offert pour vos équipements.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES / SAV SECTION -->
+    <section class="advantages">
+        <div class="container advantages-wrapper">
+            <div class="adv-content">
+                <h3>Pourquoi Choisir New Optic Vision ?</h3>
+                <ul class="adv-list">
+                    <li>Promotion sur les lunettes médicales</li>
+                    <li>Remise de prix jusqu'à 50% sur tout achat</li>
+                    <li>1 an de garantie sur vos lunettes médicales</li>
+                    <li>Entretien, Conseil et Réparation <strong>GRATUITS</strong></li>
+                </ul>
+            </div>
+            <div class="sav-box">
+                <h4>SERVICE APRÈS-VENTE (SAV)</h4>
+                <p>Nous restons à votre disposition après votre achat pour garantir la durabilité et le confort de votre
+                    équipement optique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION LOCALISATION -->
+    <section class="location-section" id="localisation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Où Nous Trouver</h2>
+            </div>
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3>Rendez-nous visite à Bafoussam</h3>
+                    <p>Notre cabinet est facilement accessible pour tous vos besoins en optique médicale.</p>
+
+                    <div class="location-card">
+                        <h4>📍 Adresse complète</h4>
+                        <p><strong>Arcades de l'Ouest</strong></p>
+                        <p>Face entrée Friperie Marché « A »</p>
+                        <p>Bafoussam, Cameroun</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h4>📞 Contact Direct</h4>
+                        <p>Téléphone : <strong>679 89 35 19 / 677 89 12 19</strong></p>
+                    </div>
+                </div>
+
+                <!-- CARTE GOOGLE MAPS INTEGREE -->
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15878.601552541334!2d10.4121!3d5.4777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105f932f3f988b43%3A0x6b7720935105a305!2sBafoussam!5e0!3m2!1sfr!2scm!4v1710000000000!5m2!1sfr!2scm"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>New Optic Vision Médical</h4>
+                    <p>Votre cabinet d'optique médicale de confiance.</p>
+                    <p><em>"Votre Partenaire Santé pour la Vue à Vie"</em></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Localisation</h4>
+                    <p>📍 Situé aux Arcades de l'Ouest</p>
+                    <p>Face entrée Friperie Marché « A »</p>
+                    <p>Bafoussam, Cameroun</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contactez-nous</h4>
+                    <p>📞 Téléphones :</p>
+                    <p class="phone-numbers">679 89 35 19 / 677 89 12 19</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; New Optic Vision Médical. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
