@@ -351,6 +351,7 @@ section {
 
 .promo-list li {
     display: flex;
+    font-size: 15px;
     align-items: center;
     gap: 8px;
 }
@@ -454,6 +455,7 @@ section {
 .contact-box {
     background: var(--bg-card);
     padding: 24px;
+    font-size: 20px;
     border-radius: var(--radius-md);
     border: 1px solid var(--gray-border);
 }
@@ -545,5 +547,8 @@ footer {
 
     .promo-list {
         grid-template-columns: 1fr;
+    }
+    .promo-list li{
+        font-size: 15px;
     }
 }

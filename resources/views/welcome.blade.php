@@ -39,10 +39,11 @@
                     <p style="font-size:0.9rem; color:#CBD5E1;">Bénéficiez de la meilleure qualité optique au meilleur
                         prix à Bafoussam avec des garanties exclusives :</p>
                     <ul class="promo-list">
-                        <li>✅ <strong>1 an de garantie</strong> sur vos lunettes médicales</li>
+                        <li>✅1 an de garantie sur vos lunettes médicales</li>
                         <li>✅ Entretien & Conseils <strong>GRATUITS</strong></li>
                         <li>✅ Réparation & Ajustement <strong>GRATUITS</strong></li>
                         <li>✅ Service Après-Vente (SAV) réactif</li>
+
                     </ul>
                 </div>
                 <div>
