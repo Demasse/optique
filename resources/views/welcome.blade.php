@@ -40,8 +40,13 @@
                 <a href="#localisation" class="btn-call">Nous rendre visite</a>
             </div>
             <div class="showcase-images">
+                <img src="{{ asset('images/first.avif') }}" alt="Examen de la vue">
                 <img src="{{ asset('images/exam.png') }}" alt="Examen de la vue">
+
+
                 <img src="{{ asset('images/boutique.png') }}" alt="Lunettes de vue">
+            
+                <img src="{{ asset('images/second.avif') }}" alt="Lunettes de vue">
             </div>
         </div>
     </section>
