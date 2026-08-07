@@ -1,0 +1,1 @@
+var e=document.getElementById(`menuBtn`),t=document.getElementById(`navLinks`);e&&t&&(e.addEventListener(`click`,()=>{t.classList.toggle(`active`)}),document.querySelectorAll(`.nav-links a`).forEach(e=>{e.addEventListener(`click`,()=>{t.classList.remove(`active`)})}));

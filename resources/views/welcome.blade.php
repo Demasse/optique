@@ -103,7 +103,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{{ asset('images/exam.png') }}" alt="Montures Médicales">
+                        <img src="{{ asset('images/premier.avif') }}" alt="Montures Médicales">
                     </div>
                     <div class="product-info">
                         <h3>Montures Médicales</h3>
@@ -113,7 +113,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{{ asset('images/boutique.png') }}" alt="Verres Teintés et Solaires">
+                        <img src="{{ asset('images/deuxieme.avif') }}" alt="Verres Teintés et Solaires">
                     </div>
                     <div class="product-info">
                         <h3>Verres Teintés & Solaires</h3>
