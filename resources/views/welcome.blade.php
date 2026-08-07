@@ -1,150 +1,194 @@
 @extends('layouts.app')
 
-@section('title', 'New Optic Vision Médical - Cabinet d\'Optique Médicale à Bafoussam')
+@section('title', 'NEW OPTIC VISION MÉDICAL | Cabinet d\'Optique Médicale - Bafoussam')
 
 @section('content')
 
     {{-- HERO SECTION --}}
-    <section class="hero" id="accueil" style="background-image: url('{{ asset('images/hero.png') }}');">
-        <div class="container">
-            <span class="hero-badge">Cabinet d'Optique Médicale</span>
-            <h1>New Optic Vision Médical</h1>
-            <p class="tagline">"Votre Partenaire Santé pour la Vue à Vie"</p>
+    <section class="hero" id="accueil">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="section-tag">Cabinet d'Optique Médicale</span>
+                <h1>Cabinet <span>NEW OPTIC VISION MÉDICAL</span></h1>
+                <div class="slogan-badge">"Votre Partenaire Santé pour la Vue à Vie"</div>
+                <p>Spécialiste de la santé visuelle à Bafoussam. Nous assurons la vente de lunettes médicales,
+                    d'accessoires optiques, ainsi que le montage, la réparation et le conseil personnalisé.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/237679893519" class="btn btn-action">
+                        📞 Nous Contacter (WhatsApp)
+                    </a>
+                    <a href="#promotions" class="btn btn-outline">Voir les Promos (-50%)</a>
+                </div>
+            </div>
 
-            {{-- Bannières d'Offres Promotionnelles --}}
-            <div class="promo-banner" id="offres">
-                <div class="promo-item">
-                    <div class="number">50%</div>
-                    <div class="label">Jusqu'à 50% de Remise</div>
+            <div class="hero-image-card">
+                <img src="{{ asset('images/hero.png') }}"
+                    alt="Consultation et lunettes médicales chez New Optic Vision Médical Bafoussam">
+            </div>
+        </div>
+    </section>
+
+    {{-- PROMOTIONS & GARANTIES --}}
+    <section id="promotions">
+        <div class="container">
+            <div class="promo-card">
+                <div>
+                    <span class="section-tag" style="background:rgba(220, 38, 38, 0.2); color:#FCA5A5;">Offre Spéciale
+                        Clientèle</span>
+                    <h3>Jusqu'à -50% de Remise sur vos Lunettes Médicales</h3>
+                    <p style="font-size:0.9rem; color:#CBD5E1;">Bénéficiez de la meilleure qualité optique au meilleur
+                        prix à Bafoussam avec des garanties exclusives :</p>
+                    <ul class="promo-list">
+                        <li>✅ <strong>1 an de garantie</strong> sur vos lunettes médicales</li>
+                        <li>✅ Entretien & Conseils <strong>GRATUITS</strong></li>
+                        <li>✅ Réparation & Ajustement <strong>GRATUITS</strong></li>
+                        <li>✅ Service Après-Vente (SAV) réactif</li>
+                    </ul>
                 </div>
-                <div class="promo-item">
-                    <div class="number">1 AN</div>
-                    <div class="label">Garantie sur Lunettes</div>
-                </div>
-                <div class="promo-item">
-                    <div class="number">100%</div>
-                    <div class="label">Conseil & SAV Gratuits</div>
+                <div>
+                    <a href="tel:679893519" class="btn btn-action"> Appeler le 679 89 35 19</a>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- SECTION A PROPOS & GALERIE VISUELLE --}}
-    <section class="about-showcase" id="apropos">
-        <div class="container showcase-grid">
-            <div class="showcase-text">
-                <h2>Excellence & Soin de votre Vue</h2>
-                <p>Chez <strong>New Optic Vision Médical</strong>, nous mettons notre expertise au service de votre
-                    santé visuelle. Profitez d'un accompagnement personnalisé, de conseils d'experts et d'un large choix
-                    de montures de qualité.</p>
-                <a href="#localisation" class="btn-call">Nous rendre visite</a>
-            </div>
-            <div class="showcase-images">
-                <img src="{{ asset('images/first.avif') }}" alt="Examen de la vue">
-                <img src="{{ asset('images/exam.png') }}" alt="Examen de la vue">
-
-
-                <img src="{{ asset('images/boutique.png') }}" alt="Lunettes de vue">
-            
-                <img src="{{ asset('images/second.avif') }}" alt="Lunettes de vue">
-            </div>
-        </div>
-    </section>
-
-    {{-- SERVICES SECTION --}}
-    <section class="services" id="services">
+    {{-- SERVICES COMPACTS --}}
+    <section class="bg-light" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Nos Services & Produits</h2>
+            <div style="text-align:center; margin-bottom: 20px;">
+                <span class="section-tag">Notre Savoir-Faire</span>
+                <h2 class="section-title">Activités & Services Optiques</h2>
             </div>
+
             <div class="services-grid">
-
                 <div class="service-card">
-                    <img src="{{ asset('images/boutique.png') }}" alt="Lunettes Médicales" class="service-img">
-                    <div class="service-info">
-                        <h3>Lunettes Médicales</h3>
-                        <p>Large choix de montures et verres adaptés à votre vue et à votre style au quotidien.</p>
-                    </div>
+                    <div class="service-icon">👓</div>
+                    <h3>Lunettes Médicales</h3>
+                    <p>Vente de verres correcteurs adaptés à vos ordonnances ophtalmiques pour une vision nette et
+                        confortable.</p>
                 </div>
 
                 <div class="service-card">
-                    <img src="{{ asset('images/exam.png') }}" alt="Accessoires Optiques" class="service-img">
-                    <div class="service-info">
-                        <h3>Accessoires Optiques</h3>
-                        <p>Produits d'entretien, étuis et accessoires haut de gamme pour vos lunettes.</p>
-                    </div>
+                    <div class="service-icon">🛠️</div>
+                    <h3>Montage & Réparation</h3>
+                    <p>Montage précis de vos verres sur monture et service de réparation rapide (remplacement de vis,
+                        plaquettes, ajustement).</p>
                 </div>
 
                 <div class="service-card">
-                    <img src="{{ asset('images/boutique.png') }}" alt="Montage et Réparation" class="service-img">
-                    <div class="service-info">
-                        <h3>Montage & Réparation</h3>
-                        <p>Montage précis de vos verres et réparation rapide de toutes vos montures.</p>
-                    </div>
+                    <div class="service-icon">🧼</div>
+                    <h3>Entretien Gratuit</h3>
+                    <p>Nettoyage professionnel aux ultrasons et vérification régulière de l'état de vos lunettes sans
+                        aucun frais.</p>
                 </div>
 
                 <div class="service-card">
-                    <img src="{{ asset('images/exam.png') }}" alt="Entretien et Conseil" class="service-img">
-                    <div class="service-info">
-                        <h3>Entretien & Conseil</h3>
-                        <p>Accompagnement personnalisé et entretien régulier offert pour vos équipements.</p>
-                    </div>
+                    <div class="service-icon">👨‍⚕️</div>
+                    <h3>Conseil en Santé Visuelle</h3>
+                    <p>Accompagnement personnalisé pour le choix de vos montures selon la morphologie de votre visage et
+                        votre quotidien.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    {{-- ADVANTAGES / SAV SECTION --}}
-    <section class="advantages">
-        <div class="container advantages-wrapper">
-            <div class="adv-content">
-                <h3>Pourquoi Choisir New Optic Vision ?</h3>
-                <ul class="adv-list">
-                    <li>Promotion sur les lunettes médicales</li>
-                    <li>Remise de prix jusqu'à 50% sur tout achat</li>
-                    <li>1 an de garantie sur vos lunettes médicales</li>
-                    <li>Entretien, Conseil et Réparation <strong>GRATUITS</strong></li>
-                </ul>
-            </div>
-            <div class="sav-box">
-                <h4>SERVICE APRÈS-VENTE (SAV)</h4>
-                <p>Nous restons à votre disposition après votre achat pour garantir la durabilité et le confort de votre
-                    équipement optique.</p>
-            </div>
-        </div>
-    </section>
-
-    {{-- SECTION LOCALISATION --}}
-    <section class="location-section" id="localisation">
+    {{-- PRODUITS & ACCESSOIRES --}}
+    <section id="produits">
         <div class="container">
-            <div class="section-title">
-                <h2>Où Nous Trouver</h2>
+            <div style="text-align:center; margin-bottom: 20px;">
+                <span class="section-tag">Équipements</span>
+                <h2 class="section-title">Lunettes & Accessoires Optiques</h2>
             </div>
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>Rendez-nous visite à Bafoussam</h3>
-                    <p>Notre cabinet est facilement accessible pour tous vos besoins en optique médicale.</p>
 
-                    <div class="location-card">
-                        <h4>📍 Adresse complète</h4>
-                        <p><strong>Arcades de l'Ouest</strong></p>
-                        <p>Face entrée Friperie Marché « A »</p>
-                        <p>Bafoussam, Cameroun</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('images/exam.png') }}" alt="Montures Médicales">
                     </div>
-
-                    <div class="location-card">
-                        <h4>📞 Contact Direct</h4>
-                        <p>Téléphone : <strong>679 89 35 19 / 677 89 12 19</strong></p>
+                    <div class="product-info">
+                        <h3>Montures Médicales</h3>
+                        <p>Large choix de montures solides, légères et élégantes pour adultes et enfants.</p>
                     </div>
                 </div>
 
-                {{-- CARTE GOOGLE MAPS INTEGREE --}}
-                <div class="location-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15878.601552541334!2d10.4121!3d5.4777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105f932f3f988b43%3A0x6b7720935105a305!2sBafoussam!5e0!3m2!1sfr!2scm!4v1710000000000!5m2!1sfr!2scm"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('images/boutique.png') }}" alt="Verres Teintés et Solaires">
+                    </div>
+                    <div class="product-info">
+                        <h3>Verres Teintés & Solaires</h3>
+                        <p>Protection contre les rayons UV avec possibilité de correction médicale.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('images/first.avif') }}" alt="Accessoires Optiques">
+                    </div>
+                    <div class="product-info">
+                        <h3>Accessoires Optiques</h3>
+                        <p>Étuis de protection, lingettes microfibres, sprays nettoyants et cordons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- CONTACT & LOCALISATION BAFOUSSAM --}}
+    <section class="bg-light" id="contact">
+        <div class="container">
+            <div style="text-align:center; margin-bottom: 20px;">
+                <span class="section-tag">Rendez-Nous Visite</span>
+                <h2 class="section-title">Contact & Localisation à Bafoussam</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <h3 style="margin-bottom: 16px;">Coordonnées du Cabinet</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Localisation Exacte :</strong>
+                            <p style="color:var(--text-muted); font-size:0.9rem;">Situé aux Arcades de l'Ouest, Face
+                                entrée Friperie Marché « A », Bafoussam</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Téléphones / Contacts :</strong>
+                            <p style="color:var(--text-muted); font-size:0.9rem;">
+                                <a href="tel:679893519" style="color:var(--green-action); font-weight:700;">679 89 35 19</a>
+                                /
+                                <a href="tel:677891219" style="color:var(--green-action); font-weight:700;">677 89 12 19</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🛡️</div>
+                        <div>
+                            <strong>Garantie & SAV :</strong>
+                            <p style="color:var(--text-muted); font-size:0.9rem;">Service Après-Vente garanti sur place
+                                pour tout besoin d'ajustement ou de réparation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-box"
+                    style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+                    <h3 style="margin-bottom: 10px;">Une Question ou un Besoin Urgent ?</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom: 18px;">Contactez directement
+                        notre opticien sur WhatsApp pour réserver vos lunettes ou demander un conseil.</p>
+                    <a href="https://wa.me/237679893519" target="_blank" class="btn btn-whatsapp" style="padding:14px;">
+                        Discuter directement sur WhatsApp (679 89 35 19)
+                    </a>
+                    <br>
+                    <a href="#" class="btn btn-reservation" style="padding:14px;">
+                        Faire une reservation
+                    </a>
                 </div>
             </div>
         </div>
